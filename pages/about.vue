@@ -7,7 +7,7 @@ definePageMeta({
 </script>
 
 <template>
-  <h1 class="text-red-500 text-4xl">about</h1>
+  <h1 class="text-red-500 text-4xl">{{ $t('about') }}</h1>
   <p>
     Proident id pariatur aliquip. Irure incididunt duis velit veniam laborum eiusmod ad sit amet. Velit ullamco ex amet
     quis id mollit sunt aute commodo duis incididunt reprehenderit incididunt. Consectetur aliqua fugiat nulla Lorem

@@ -1,28 +1,17 @@
 <script setup>
-const { t, locale, availableLocales } = useI18n()
+const { locale, availableLocales } = useI18n()
+const router = useRouter()
 
-const localeCookie = useCookie('locale')
-if (localeCookie.value) {
-  locale.value = localeCookie.value
-}
-
-watch(locale, (locale) => {
-  localeCookie.value = locale
+watch(locale, (newValue, oldValue) => {
+  router.push(router.currentRoute.value.path.replace('/' + oldValue, '/' + newValue))
 })
 </script>
 
 <template>
   <div>
-    <form>
-      <select v-model="locale">
-        <option
-            v-for="availableLocale in availableLocales"
-            :value="availableLocale"
-            :key="availableLocale"
-        >
-          {{ availableLocale }}
-        </option>
-      </select>
+    <form><select v-model="locale">
+      <option v-for="l in availableLocales" :value="l">{{ l }}</option>
+    </select>
     </form>
   </div>
 </template>

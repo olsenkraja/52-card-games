@@ -1,5 +1,5 @@
 <script setup>
-
+const localePath = useLocalePath()
 
 function logout() {
   const token = useCookie('token')
@@ -15,8 +15,9 @@ function logout() {
         <div>
           <div class="flex justify-between">
             <div class="space-x-2">
-              <NuxtLink to="/" class="hover:underline">Home</NuxtLink>
-              <NuxtLink to="/about" class="hover:underline">About</NuxtLink>
+              <NuxtLink :to="localePath('/')" class="hover:underline">{{ $t('home') }}</NuxtLink>
+              <NuxtLink :to="localePath('/about')" class="hover:underline">{{ $t('about') }}</NuxtLink>
+              <NuxtLink :to="localePath('/welcome')" class="hover:underline">{{ $t('welcome') }}</NuxtLink>
             </div>
             <div class="flex space-x-2">
               <LocaleSelector />
