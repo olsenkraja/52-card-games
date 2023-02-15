@@ -1,0 +1,13 @@
+{
+  "extends": "@antfu",
+  "rules": {
+    "curly": "off",
+    "no-undef": "off",
+    "template-curly-spacing": "off",
+    "prefer-template": "off",
+    "brace-style": "off",
+    "@typescript-eslint/brace-style": "off",
+    "vue/custom-event-name-casing": "off",
+    "vue/no-mutating-props": "off"
+  }
+}

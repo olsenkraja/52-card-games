@@ -1,31 +1,31 @@
 export default defineNuxtConfig({
   css: [
-    '@/assets/css/main.css'
+    '@/assets/css/main.css',
   ],
 
   modules: [
-    '@nuxtjs/i18n'
+    '@nuxtjs/i18n',
   ],
   i18n: {
     locales: [
       { code: 'de', file: 'de.json' },
-      { code: 'en', file: 'en.json' }
+      { code: 'en', file: 'en.json' },
     ],
     langDir: 'locales',
     strategy: 'prefix',
-    defaultLocale: 'en'
+    defaultLocale: 'en',
   },
 
   postcss: {
     plugins: {
       tailwindcss: {},
-      autoprefixer: {}
-    }
+      autoprefixer: {},
+    },
   },
 
   runtimeConfig: {
     public: {
-      IPSUM: process.env.IPSUM
-    }
-  }
+      IPSUM: process.env.IPSUM,
+    },
+  },
 })

@@ -9,9 +9,12 @@ watch(locale, (newValue, oldValue) => {
 
 <template>
   <div>
-    <form><select v-model="locale">
-      <option v-for="l in availableLocales" :value="l">{{ l }}</option>
-    </select>
+    <form>
+      <select v-model="locale">
+        <option v-for="l in availableLocales" :key="l" :value="l">
+          {{ l }}
+        </option>
+      </select>
     </form>
   </div>
 </template>
