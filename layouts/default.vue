@@ -4,7 +4,7 @@ const localePath = useLocalePath()
 function logout() {
   const token = useCookie('token')
   token.value = null
-  navigateTo('/login')
+  navigateTo(localePath('/login'))
 }
 </script>
 
@@ -28,7 +28,7 @@ function logout() {
             <div class="flex space-x-2">
               <LanguageSelector />
               <button @click="logout">
-                Logout
+                {{ $t('logout') }}
               </button>
             </div>
           </div>

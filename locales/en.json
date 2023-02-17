@@ -1,5 +1,7 @@
 {
   "home": "Home",
   "about": "About",
-  "welcome": "Welcome"
+  "welcome": "Welcome",
+  "login": "Login",
+  "logout": "Logout"
 }

@@ -1,5 +1,7 @@
 {
   "home": "Home",
   "about": "Über uns",
-  "welcome": "Willkommen"
+  "welcome": "Willkommen",
+  "login": "Einloggen",
+  "logout": "Ausloggen"
 }
