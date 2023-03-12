@@ -11,7 +11,7 @@ function logout() {
 <template>
   <div class="bg-slate-50">
     <div class="h-screen max-w-6xl flex flex-col mx-auto">
-      <div class="mx-auto w-full">
+      <div class="mx-auto w-full px-4 xl:px-0">
         <div>
           <div class="flex justify-between">
             <div class="space-x-2">
