@@ -3,11 +3,10 @@ const { locale, availableLocales } = useI18n()
 const router = useRouter()
 
 watch(locale, (newValue, oldValue) => {
-  console.log(router.currentRoute.value.path)
   router.push(
-      router.currentRoute.value.path !== '/'
-          ? router.currentRoute.value.path.replace('/' + oldValue, '/' + newValue)
-          : '/' + newValue
+    router.currentRoute.value.path !== '/'
+      ? router.currentRoute.value.path.replace('/' + oldValue, '/' + newValue)
+      : '/' + newValue,
   )
 })
 </script>
