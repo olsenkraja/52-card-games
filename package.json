@@ -1,5 +1,8 @@
 {
   "private": true,
+  "engines": {
+    "node": "^18.15.0"
+  },
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
@@ -7,9 +10,6 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "eslint": "eslint --fix ."
-  },
-  "engines": {
-    "node": "^18.15.0"
   },
   "dependencies": {
     "@vueuse/core": "^10.1.2"
