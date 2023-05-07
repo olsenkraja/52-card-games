@@ -5,9 +5,28 @@
     "no-undef": "off",
     "template-curly-spacing": "off",
     "prefer-template": "off",
+    "vue/prefer-template": "off",
     "brace-style": "off",
     "@typescript-eslint/brace-style": "off",
     "vue/custom-event-name-casing": "off",
-    "vue/no-mutating-props": "off"
+    "vue/no-mutating-props": "off",
+    "vue/max-attributes-per-line": [
+      "error",
+      {
+        "singleline": {
+          "max": 1000
+        },
+        "multiline": {
+          "max": 1
+        }
+      }
+    ],
+    "vue/first-attribute-linebreak": [
+      "error",
+      {
+        "singleline": "beside",
+        "multiline": "below"
+      }
+    ]
   }
 }
