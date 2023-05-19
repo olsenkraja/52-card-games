@@ -14,17 +14,28 @@ function select() {
 
 <template>
   <button
-    class="h-96 w-64 border -ml-48 rounded-3xl text-left transform bg-white shadow-xl p-4 flex flex-col hover:bg-blue-50"
+    class="h-96 w-64 border rounded-3xl text-left transition-all ease-in-out transform bg-white shadow-xl p-4 hover:bg-blue-50 relative"
     :class="{
       'text-red-500': card.color === 'hearts',
-      '!bg-blue-100 ring-4 ring-blue-500': isSelected,
+      '!bg-blue-100 ring-4 ring-blue-500 -translate-y-[12vh]': isSelected,
     }"
-    :style="`--tw-rotate: ${6 * (index - amount / 2)}deg; margin-top: ${Math.abs(8 * (index - amount / 3))}px`"
+    :style="`--tw-rotate: ${4 * (index - amount / 2)}deg; margin-top: ${Math.abs(10 * (index - amount / 3))}px`"
     @click="select"
   >
-    <span class="text-4xl font-extrabold">
-      {{ card.number }}
+    <span class="absolute top-2.5 left-2.5 flex flex-col">
+      <span class="text-xl font-extrabold tracking-tighter">
+        {{ card.number }}
+      </span>
+      <span class="text-xl" v-html="'&' + card.color + ';'" />
     </span>
-    <span class="text-3xl" v-html="'&' + card.color + ';'" />
+    <span class="absolute flex items-center justify-center inset-0">
+      <span class="text-9xl" v-html="'&' + card.color + ';'" />
+    </span>
+    <span class="absolute bottom-2.5 right-2.5 rotate-180 flex flex-col">
+      <span class="text-xl font-extrabold tracking-tighter">
+        {{ card.number }}
+      </span>
+      <span class="text-xl" v-html="'&' + card.color + ';'" />
+    </span>
   </button>
 </template>
