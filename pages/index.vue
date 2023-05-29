@@ -1,6 +1,7 @@
 <script setup>
 const selectedCardIndex = ref()
 const field = ref([])
+const beingThrown = ref([])
 const cards = ref([
   {
     number: 4,
@@ -23,32 +24,32 @@ const cards = ref([
     color: 'hearts',
   },
   {
-    number: 6,
+    number: 'A',
     color: 'hearts',
   },
   {
-    number: 'J',
+    number: 'Q',
     color: 'hearts',
   },
   {
-    number: 'K',
-    color: 'spades',
+    number: 2,
+    color: 'diams',
   },
   {
     number: 4,
-    color: 'hearts',
+    color: 'clubs',
   },
   {
     number: 6,
-    color: 'hearts',
+    color: 'diams',
   },
   {
     number: 'J',
-    color: 'hearts',
+    color: 'diams',
   },
   {
     number: 10,
-    color: 'spades',
+    color: 'clubs',
   },
 ])
 
@@ -62,9 +63,13 @@ function select(index) {
 
 function throwCard() {
   if (selectedCardIndex.value !== null) {
-    field.value.push(cards.value[selectedCardIndex.value])
-    cards.value.splice(selectedCardIndex.value, 1)
-    selectedCardIndex.value = null
+    beingThrown.value.push(cards.value[selectedCardIndex.value])
+    setTimeout(() => {
+      field.value.push(cards.value[selectedCardIndex.value])
+      cards.value.splice(selectedCardIndex.value, 1)
+      selectedCardIndex.value = null
+      beingThrown.value.push([])
+    }, 1000)
   }
 }
 
@@ -74,15 +79,14 @@ function skip() {
 </script>
 
 <template>
-  <div class="absolute flex items-center justify-center inset-0">
-    <div class="relative">
-      <div v-for="card in field" class="absolute">
-        {{ card }}
-      </div>
-    </div>
+  <div class="h-screen flex items-center justify-center">
+    <Field :field="field" :cards="cards" :being-thrown="beingThrown" />
   </div>
-  <div class="absolute -bottom-32 left-16 w-[100vw]">
-    <div class="flex items-center justify-center -space-x-48">
+  <div class="absolute bottom-0 w-screen h-[400px] pt-32 overflow-hidden inset-x-0">
+    <div
+      class="grid px-8 w-full md:max-w-3xl md:mx-auto"
+      :style="'grid-template-columns: repeat(' + cards.length + ', minmax(0, 1fr));'"
+    >
       <Card
         v-for="(card, i) in cards"
         :key="card"

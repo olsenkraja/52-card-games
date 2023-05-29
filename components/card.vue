@@ -14,12 +14,12 @@ function select() {
 
 <template>
   <button
-    class="h-96 w-64 border rounded-3xl text-left transition-all ease-in-out transform bg-white shadow-xl p-4 hover:bg-blue-50 relative"
+    class="mx-auto border h-64 w-48 rounded-3xl text-left transition-all ease-in-out transform bg-white shadow-xl p-4 hover:bg-blue-50 relative self-center justify-center"
     :class="{
-      'text-red-500': card.color === 'hearts',
-      '!bg-blue-100 ring-4 ring-blue-500 -translate-y-[12vh]': isSelected,
+      'text-red-500': card.color === 'hearts' || card.color === 'diams',
+      '!bg-blue-100 ring-4 ring-blue-500 -translate-y-[6vh]': isSelected,
     }"
-    :style="`--tw-rotate: ${4 * (index - amount / 2)}deg; margin-top: ${Math.abs(10 * (index - amount / 3))}px`"
+    :style="`--tw-rotate: ${1 * (index - amount / 1)}deg; margin-top: ${Math.abs(4 * (index - amount / 3))}px`"
     @click="select"
   >
     <span class="absolute top-2.5 left-2.5 flex flex-col">
